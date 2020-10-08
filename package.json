@@ -15,7 +15,7 @@
   },
   "scripts": {
     "dev": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "start": "yarn knex:migrate && ts-node src/server.ts",
+    "start": "ts-node src/server.ts",
     "build": "tsc -p .",
     "test": "jest"
   },
