@@ -1,0 +1,52 @@
+{
+  "name": "nodejs-ts-ci-cd",
+  "version": "1.0.0",
+  "author": "Fabio Rocha",
+  "main": "index.js",
+  "license": "MIT",
+  "engines": {
+    "node": "14.x"
+  },
+  "devDependencies": {
+    "jest": "^26.5.2",
+    "supertest": "^5.0.0",
+    "ts-jest": "^26.4.1"
+  },
+  "scripts": {
+    "dev": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "start": "yarn knex:migrate && ts-node src/server.ts",
+    "build": "tsc -p .",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
+    "tests": "jest"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.7",
+    "@types/node": "^14.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.56",
+    "typescript": "^3.9.7"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/tests/*.+(ts|tsx|js)"
+    ]
+  }
+}
