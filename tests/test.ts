@@ -14,15 +14,3 @@ test("index route index", done => {
     .expect({ message: "Hello" })
     .expect(200, done);
 });
-
-test("testing route create", done => {
-  request(app)
-    .post("/create")
-    .type("form")
-    .send({ item: "hey" })
-    .then(() => {
-      request(app)
-        .get("/")
-        .expect({ message: "Hello" }, done);
-    });
-});
