@@ -1,4 +1,12 @@
 {
-    "version": 2,
-    "builds": [{ "dist": "server.js", "use": "@now/node-server" }]
+    "routes":[
+        {
+            "src": "/",
+            "dist": "/"
+        },
+        {
+            "src": "/",
+            "dist": "/create"
+        }
+    ]
 }
