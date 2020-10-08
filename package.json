@@ -8,6 +8,7 @@
     "node": "12.x"
   },
   "devDependencies": {
+    "@vercel/node": "^1.8.4",
     "jest": "^26.5.2",
     "supertest": "^5.0.0",
     "ts-jest": "^26.4.1"
